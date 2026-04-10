@@ -1039,10 +1039,88 @@
     .lang-btn.active { opacity:1;border-color:var(--border-h); }
     @media (max-width:600px) { .lang-switcher { margin:0 .2rem; } .lang-btn { font-size:.95rem;padding:.15rem .18rem; } }
   </style>
-  <!-- Vercel Analytics -->
-  <script defer src="/_vercel/insights/script.js"></script>
+  <!-- Vercel Analytics (loads only after consent) -->
+  <script>
+    window.__va_loaded = false;
+    function loadVercelAnalytics(){
+      if(window.__va_loaded) return;
+      window.__va_loaded = true;
+      var s=document.createElement('script');
+      s.defer=true;
+      s.src='/_vercel/insights/script.js';
+      document.head.appendChild(s);
+    }
+    // Auto-load if already consented
+    try{ if(localStorage.getItem('oc-cookie-consent')==='accepted') loadVercelAnalytics(); }catch(e){}
+  </script>
+
+  <style>
+    /* ── Cookie Banner ───────────────────────────────────── */
+    #cookie-banner {
+      position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);
+      z-index:9999;
+      background:rgba(7,22,41,0.97);
+      border:1px solid rgba(0,229,255,0.22);
+      border-radius:14px;
+      padding:1.25rem 1.5rem;
+      max-width:520px;width:calc(100% - 2rem);
+      box-shadow:0 8px 40px rgba(0,0,0,0.5),0 0 0 1px rgba(0,229,255,0.06);
+      display:flex;flex-direction:column;gap:.9rem;
+      backdrop-filter:blur(12px);
+      animation:cookieSlideUp .4s cubic-bezier(.22,1,.36,1) both;
+    }
+    @keyframes cookieSlideUp {
+      from { opacity:0;transform:translateX(-50%) translateY(20px); }
+      to   { opacity:1;transform:translateX(-50%) translateY(0); }
+    }
+    #cookie-banner.hidden { display:none; }
+    .ck-top { display:flex;align-items:flex-start;gap:.75rem; }
+    .ck-icon { font-size:1.3rem;flex-shrink:0;margin-top:.05rem; }
+    .ck-text { font-size:.78rem;color:rgba(232,244,255,0.75);line-height:1.6; }
+    .ck-text strong { color:#E8F4FF;font-weight:600; }
+    .ck-text a { color:var(--cyan);text-decoration:underline;text-underline-offset:2px; }
+    .ck-btns { display:flex;gap:.6rem;flex-wrap:wrap; }
+    .ck-btn-accept {
+      flex:1;min-width:120px;
+      background:linear-gradient(135deg,#00E5FF,#00FF94);
+      color:#020C18;font-size:.75rem;font-weight:700;letter-spacing:.04em;
+      border:none;border-radius:8px;padding:.55rem 1rem;cursor:pointer;
+      transition:opacity .18s,transform .15s;
+    }
+    .ck-btn-accept:hover { opacity:.88;transform:translateY(-1px); }
+    .ck-btn-decline {
+      flex:1;min-width:100px;
+      background:transparent;
+      color:rgba(232,244,255,0.5);font-size:.75rem;font-weight:500;
+      border:1px solid rgba(0,229,255,0.15);border-radius:8px;padding:.55rem 1rem;cursor:pointer;
+      transition:border-color .18s,color .18s;
+    }
+    .ck-btn-decline:hover { border-color:rgba(0,229,255,0.35);color:rgba(232,244,255,0.8); }
+    @media(max-width:480px){
+      #cookie-banner { bottom:0;left:0;right:0;transform:none;border-radius:14px 14px 0 0;max-width:100%;width:100%; }
+      @keyframes cookieSlideUp {
+        from { opacity:0;transform:translateY(20px); }
+        to   { opacity:1;transform:translateY(0); }
+      }
+    }
+  </style>
 </head>
 <body>
+
+<!-- ── Cookie Consent Banner ──────────────────────────────── -->
+<div id="cookie-banner" class="hidden" role="dialog" aria-label="Cookie consent">
+  <div class="ck-top">
+    <span class="ck-icon">🍪</span>
+    <p class="ck-text" id="ck-text">
+      <strong id="ck-title">Vi bruker informasjonskapsler</strong><br>
+      <span id="ck-body">Vi bruker informasjonskapsler for å analysere trafikk og forbedre din opplevelse. Ingen persondata deles med tredjeparter.</span>
+    </p>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-btn-accept" id="ck-accept" onclick="cookieConsent('accepted')">Godta alle</button>
+    <button class="ck-btn-decline" id="ck-decline" onclick="cookieConsent('declined')">Kun nødvendige</button>
+  </div>
+</div>
 
 <!-- Custom Cursor -->
 <div class="cd" id="cd"></div>
@@ -2978,6 +3056,70 @@ document.querySelectorAll('[data-target]').forEach(el=>co.observe(el));
   },{threshold:0.2});
   const demoEl=document.getElementById('demo');
   if(demoEl) demoObs.observe(demoEl);
+})();
+</script>
+
+<!-- ── Cookie Consent Logic ──────────────────────────────── -->
+<script>
+(function(){
+  const COOKIE_STRINGS = {
+    no: {
+      title:   'Vi bruker informasjonskapsler',
+      body:    'Vi bruker informasjonskapsler for å analysere trafikk og forbedre din opplevelse. Ingen persondata deles med tredjeparter.',
+      accept:  'Godta alle',
+      decline: 'Kun nødvendige',
+    },
+    sv: {
+      title:   'Vi använder cookies',
+      body:    'Vi använder cookies för att analysera trafik och förbättra din upplevelse. Inga personuppgifter delas med tredje part.',
+      accept:  'Godkänn alla',
+      decline: 'Endast nödvändiga',
+    },
+    en: {
+      title:   'We use cookies',
+      body:    'We use cookies to analyse traffic and improve your experience. No personal data is shared with third parties.',
+      accept:  'Accept all',
+      decline: 'Essential only',
+    },
+  };
+
+  function updateBannerLang(lang) {
+    const s = COOKIE_STRINGS[lang] || COOKIE_STRINGS.no;
+    const title   = document.getElementById('ck-title');
+    const body    = document.getElementById('ck-body');
+    const accept  = document.getElementById('ck-accept');
+    const decline = document.getElementById('ck-decline');
+    if(title)   title.textContent   = s.title;
+    if(body)    body.textContent    = s.body;
+    if(accept)  accept.textContent  = s.accept;
+    if(decline) decline.textContent = s.decline;
+  }
+
+  // Hook into setLang so banner updates with language switch
+  const _origSetLang = window.setLang;
+  window.setLang = function(lang) {
+    if(_origSetLang) _origSetLang(lang);
+    updateBannerLang(lang);
+  };
+
+  window.cookieConsent = function(choice) {
+    try { localStorage.setItem('oc-cookie-consent', choice); } catch(e){}
+    document.getElementById('cookie-banner').classList.add('hidden');
+    if(choice === 'accepted') loadVercelAnalytics();
+  };
+
+  // Show banner if no consent stored yet
+  try {
+    const stored = localStorage.getItem('oc-cookie-consent');
+    if(!stored) {
+      const banner = document.getElementById('cookie-banner');
+      // Set correct language before showing
+      const lang = (function(){ try{ const s=localStorage.getItem('oc-lang'); return (s&&['no','sv','en'].includes(s))?s:'no'; }catch(e){ return 'no'; } })();
+      updateBannerLang(lang);
+      // Small delay so page renders first
+      setTimeout(function(){ banner.classList.remove('hidden'); }, 800);
+    }
+  } catch(e){}
 })();
 </script>
 
