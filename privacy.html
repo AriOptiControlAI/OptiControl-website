@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Personvernerklæring — OptiControl AI</title>
+  <meta name="description" id="page-desc" content="Les OptiControl AI sin personvernerklæring og hvordan vi behandler dine personopplysninger." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root {
+      --bg:    #020C18;
+      --surf:  #071629;
+      --surf2: #0C1E35;
+      --border:#1A2E48;
+      --cyan:  #00E5FF;
+      --mint:  #00FF94;
+      --grad:  linear-gradient(135deg,#00E5FF 0%,#00FF94 100%);
+      --text:  #E8F4FF;
+      --muted: rgba(232,244,255,.55);
+      --dim:   rgba(232,244,255,.3);
+    }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,'Segoe UI',sans-serif; line-height:1.7; min-height:100vh; }
+
+    nav { position:sticky; top:0; z-index:100; background:rgba(2,12,24,.92); border-bottom:1px solid var(--border); backdrop-filter:blur(12px); padding:.9rem 2rem; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { font-size:.9rem; font-weight:700; color:#fff; text-decoration:none; }
+    .nav-logo em { font-style:normal; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-back { font-size:.8rem; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:.4rem; transition:color .2s; }
+    .nav-back:hover { color:var(--cyan); }
+    .lang-btns { display:flex; gap:.4rem; }
+    .lang-btn { background:transparent; border:1px solid var(--border); color:var(--muted); font-size:.72rem; font-weight:600; padding:.3rem .6rem; border-radius:5px; cursor:pointer; transition:all .2s; letter-spacing:.04em; }
+    .lang-btn.active, .lang-btn:hover { border-color:var(--cyan); color:var(--cyan); }
+
+    main { max-width:760px; margin:0 auto; padding:4rem 2rem 6rem; }
+    .page-label { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); margin-bottom:1rem; }
+    h1 { font-size:2rem; font-weight:800; margin-bottom:.5rem; line-height:1.2; }
+    .updated { font-size:.8rem; color:var(--dim); margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+    .updated span { color:var(--muted); }
+
+    .section { margin-bottom:2.5rem; }
+    .section h2 { font-size:1rem; font-weight:700; color:var(--cyan); margin-bottom:.75rem; display:flex; align-items:center; gap:.6rem; }
+    .section h2::before { content:attr(data-num); font-size:.68rem; font-weight:800; background:rgba(0,229,255,.1); border:1px solid rgba(0,229,255,.2); border-radius:4px; padding:.15rem .4rem; color:var(--cyan); flex-shrink:0; }
+    .section p { color:var(--muted); font-size:.9rem; line-height:1.8; margin-bottom:.75rem; }
+    .section ul { list-style:none; padding:0; }
+    .section ul li { color:var(--muted); font-size:.9rem; padding:.35rem 0 .35rem 1.2rem; position:relative; }
+    .section ul li::before { content:'›'; position:absolute; left:0; color:var(--cyan); font-weight:700; }
+
+    .gdpr-grid { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-top:.75rem; }
+    .gdpr-item { background:var(--surf); border:1px solid var(--border); border-radius:8px; padding:.85rem 1rem; font-size:.82rem; color:var(--muted); display:flex; align-items:flex-start; gap:.5rem; }
+    .gdpr-item::before { content:'✓'; color:var(--cyan); font-weight:700; flex-shrink:0; }
+
+    .contact-box { background:var(--surf); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.5rem; margin-top:.75rem; display:flex; align-items:center; gap:.75rem; }
+    .contact-box a { color:var(--cyan); text-decoration:none; font-size:.9rem; font-weight:600; }
+    .contact-box a:hover { text-decoration:underline; }
+
+    footer { border-top:1px solid var(--border); padding:2rem; text-align:center; }
+    footer a { color:var(--muted); text-decoration:none; font-size:.8rem; transition:color .2s; }
+    footer a:hover { color:var(--cyan); }
+    footer .sep { color:var(--border); margin:0 .75rem; }
+
+    @media(max-width:600px) {
+      main { padding:2.5rem 1.25rem 4rem; }
+      h1 { font-size:1.5rem; }
+      nav { padding:.75rem 1.25rem; }
+      .gdpr-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Opti<em>Control</em></a>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="/" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span id="back-label">Tilbake</span>
+    </a>
+    <div class="lang-btns">
+      <button class="lang-btn active" onclick="setLang('no')">NO</button>
+      <button class="lang-btn" onclick="setLang('sv')">SV</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="page-label" id="label-top">Juridisk</div>
+  <h1 id="page-h1">Personvernerklæring</h1>
+  <div class="updated" id="updated-line"></div>
+
+  <div class="section">
+    <h2 data-num="01" id="s1-title">Innledning</h2>
+    <p id="s1-body">OptiControl AI tar personvernet ditt på alvor. Denne personvernerklæringen forklarer hvordan vi samler inn, bruker og beskytter dine personopplysninger.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="02" id="s2-title">Informasjon vi samler inn</h2>
+    <p id="s2-intro">Vi samler inn følgende typer informasjon:</p>
+    <ul id="s2-list">
+      <li>Kontaktinformasjon (navn, e-post, telefon)</li>
+      <li>Bedriftsinformasjon</li>
+      <li>Teknisk informasjon (IP-adresse, nettlesertype)</li>
+      <li>Informasjonskapsler (cookies)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 data-num="03" id="s3-title">Hvordan vi bruker informasjonen</h2>
+    <p id="s3-intro">Vi bruker informasjonen din til å:</p>
+    <ul id="s3-list">
+      <li>Levere og forbedre våre tjenester</li>
+      <li>Kommunisere med deg</li>
+      <li>Analysere bruken av nettsiden</li>
+      <li>Oppfylle juridiske forpliktelser</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 data-num="04" id="s4-title">Deling av informasjon</h2>
+    <p id="s4-body">Vi deler ikke dine personopplysninger med tredjeparter, unntatt når det er nødvendig for å levere våre tjenester eller når loven krever det.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="05" id="s5-title">Dine rettigheter</h2>
+    <p id="s5-intro">I henhold til GDPR har du rett til å:</p>
+    <div class="gdpr-grid" id="s5-grid">
+      <div class="gdpr-item">Få innsyn i dine personopplysninger</div>
+      <div class="gdpr-item">Rette uriktige opplysninger</div>
+      <div class="gdpr-item">Slette dine opplysninger</div>
+      <div class="gdpr-item">Trekke tilbake samtykke</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 data-num="06" id="s6-title">Kontakt oss</h2>
+    <p id="s6-body">Har du spørsmål om personvern? Kontakt oss på:</p>
+    <div class="contact-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#00E5FF" stroke-width="1.5"/><polyline points="22,6 12,13 2,6" stroke="#00E5FF" stroke-width="1.5"/></svg>
+      <a href="mailto:ari@opticontrol.ai">ari@opticontrol.ai</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/" id="footer-home">Hjem</a>
+  <span class="sep">·</span>
+  <a href="/terms.html" id="footer-terms">Vilkår og betingelser</a>
+  <span class="sep">·</span>
+  <span style="color:var(--dim);font-size:.8rem;" id="footer-copy">© 2026 OptiControl AI</span>
+</footer>
+
+<script>
+const LANG = {
+  no: {
+    htmlLang: 'nb',
+    pageTitle: 'Personvernerklæring — OptiControl AI',
+    pageDesc: 'Les OptiControl AI sin personvernerklæring og hvordan vi behandler dine personopplysninger.',
+    labelTop: 'Juridisk',
+    pageH1: 'Personvernerklæring',
+    updatedPrefix: 'Sist oppdatert:',
+    backLabel: 'Tilbake',
+    s1Title: 'Innledning',
+    s1Body: 'OptiControl AI tar personvernet ditt på alvor. Denne personvernerklæringen forklarer hvordan vi samler inn, bruker og beskytter dine personopplysninger.',
+    s2Title: 'Informasjon vi samler inn',
+    s2Intro: 'Vi samler inn følgende typer informasjon:',
+    s2List: ['Kontaktinformasjon (navn, e-post, telefon)','Bedriftsinformasjon','Teknisk informasjon (IP-adresse, nettlesertype)','Informasjonskapsler (cookies)'],
+    s3Title: 'Hvordan vi bruker informasjonen',
+    s3Intro: 'Vi bruker informasjonen din til å:',
+    s3List: ['Levere og forbedre våre tjenester','Kommunisere med deg','Analysere bruken av nettsiden','Oppfylle juridiske forpliktelser'],
+    s4Title: 'Deling av informasjon',
+    s4Body: 'Vi deler ikke dine personopplysninger med tredjeparter, unntatt når det er nødvendig for å levere våre tjenester eller når loven krever det.',
+    s5Title: 'Dine rettigheter',
+    s5Intro: 'I henhold til GDPR har du rett til å:',
+    s5Rights: ['Få innsyn i dine personopplysninger','Rette uriktige opplysninger','Slette dine opplysninger','Trekke tilbake samtykke'],
+    s6Title: 'Kontakt oss',
+    s6Body: 'Har du spørsmål om personvern? Kontakt oss på:',
+    footerHome: 'Hjem',
+    footerTerms: 'Vilkår og betingelser',
+    footerCopy: '© 2026 OptiControl AI',
+    dateLocale: 'nb-NO',
+  },
+  sv: {
+    htmlLang: 'sv',
+    pageTitle: 'Integritetspolicy — OptiControl AI',
+    pageDesc: 'Läs OptiControl AI:s integritetspolicy och hur vi hanterar dina personuppgifter.',
+    labelTop: 'Juridiskt',
+    pageH1: 'Integritetspolicy',
+    updatedPrefix: 'Senast uppdaterad:',
+    backLabel: 'Tillbaka',
+    s1Title: 'Inledning',
+    s1Body: 'OptiControl AI tar din integritet på allvar. Denna integritetspolicy förklarar hur vi samlar in, använder och skyddar dina personuppgifter.',
+    s2Title: 'Information vi samlar in',
+    s2Intro: 'Vi samlar in följande typer av information:',
+    s2List: ['Kontaktuppgifter (namn, e-post, telefon)','Företagsinformation','Teknisk information (IP-adress, webbläsartyp)','Cookies (kakor)'],
+    s3Title: 'Hur vi använder informationen',
+    s3Intro: 'Vi använder din information för att:',
+    s3List: ['Leverera och förbättra våra tjänster','Kommunicera med dig','Analysera användningen av webbplatsen','Uppfylla juridiska skyldigheter'],
+    s4Title: 'Delning av information',
+    s4Body: 'Vi delar inte dina personuppgifter med tredje parter, förutom när det är nödvändigt för att leverera våra tjänster eller när lagen kräver det.',
+    s5Title: 'Dina rättigheter',
+    s5Intro: 'Enligt GDPR har du rätt att:',
+    s5Rights: ['Få tillgång till dina personuppgifter','Rätta felaktiga uppgifter','Radera dina uppgifter','Återkalla samtycke'],
+    s6Title: 'Kontakta oss',
+    s6Body: 'Har du frågor om integritet? Kontakta oss på:',
+    footerHome: 'Hem',
+    footerTerms: 'Villkor och bestämmelser',
+    footerCopy: '© 2026 OptiControl AI',
+    dateLocale: 'sv-SE',
+  },
+  en: {
+    htmlLang: 'en',
+    pageTitle: 'Privacy Policy — OptiControl AI',
+    pageDesc: 'Read OptiControl AI\'s privacy policy and how we handle your personal data.',
+    labelTop: 'Legal',
+    pageH1: 'Privacy Policy',
+    updatedPrefix: 'Last updated:',
+    backLabel: 'Back',
+    s1Title: 'Introduction',
+    s1Body: 'OptiControl AI takes your privacy seriously. This privacy policy explains how we collect, use and protect your personal data.',
+    s2Title: 'Information we collect',
+    s2Intro: 'We collect the following types of information:',
+    s2List: ['Contact information (name, email, phone)','Business information','Technical information (IP address, browser type)','Cookies'],
+    s3Title: 'How we use the information',
+    s3Intro: 'We use your information to:',
+    s3List: ['Deliver and improve our services','Communicate with you','Analyse website usage','Fulfil legal obligations'],
+    s4Title: 'Sharing of information',
+    s4Body: 'We do not share your personal data with third parties, except when necessary to deliver our services or when required by law.',
+    s5Title: 'Your rights',
+    s5Intro: 'Under GDPR, you have the right to:',
+    s5Rights: ['Access your personal data','Correct inaccurate data','Delete your data','Withdraw consent'],
+    s6Title: 'Contact us',
+    s6Body: 'Do you have questions about privacy? Contact us at:',
+    footerHome: 'Home',
+    footerTerms: 'Terms and Conditions',
+    footerCopy: '© 2026 OptiControl AI',
+    dateLocale: 'en-GB',
+  }
+};
+
+function formatDate(locale) {
+  return new Date().toLocaleDateString(locale, {day:'numeric', month:'long', year:'numeric'});
+}
+
+function setLang(lang) {
+  const t = LANG[lang];
+  document.documentElement.lang = t.htmlLang;
+  document.getElementById('page-title').textContent = t.pageTitle;
+  document.querySelector('meta[name="description"]').content = t.pageDesc;
+  document.getElementById('label-top').textContent = t.labelTop;
+  document.getElementById('page-h1').textContent = t.pageH1;
+  document.getElementById('updated-line').innerHTML = t.updatedPrefix + ' <span>' + formatDate(t.dateLocale) + '</span>';
+  document.getElementById('back-label').textContent = t.backLabel;
+  document.getElementById('s1-title').textContent = t.s1Title;
+  document.getElementById('s1-body').textContent = t.s1Body;
+  document.getElementById('s2-title').textContent = t.s2Title;
+  document.getElementById('s2-intro').textContent = t.s2Intro;
+  document.getElementById('s2-list').innerHTML = t.s2List.map(i => '<li>' + i + '</li>').join('');
+  document.getElementById('s3-title').textContent = t.s3Title;
+  document.getElementById('s3-intro').textContent = t.s3Intro;
+  document.getElementById('s3-list').innerHTML = t.s3List.map(i => '<li>' + i + '</li>').join('');
+  document.getElementById('s4-title').textContent = t.s4Title;
+  document.getElementById('s4-body').textContent = t.s4Body;
+  document.getElementById('s5-title').textContent = t.s5Title;
+  document.getElementById('s5-intro').textContent = t.s5Intro;
+  document.getElementById('s5-grid').innerHTML = t.s5Rights.map(r => '<div class="gdpr-item">' + r + '</div>').join('');
+  document.getElementById('s6-title').textContent = t.s6Title;
+  document.getElementById('s6-body').textContent = t.s6Body;
+  document.getElementById('footer-home').textContent = t.footerHome;
+  document.getElementById('footer-terms').textContent = t.footerTerms;
+  document.getElementById('footer-copy').textContent = t.footerCopy;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+}
+
+setLang('no');
+</script>
+</body>
+</html>

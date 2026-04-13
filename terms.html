@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Vilkår og betingelser — OptiControl AI</title>
+  <meta name="description" id="page-desc" content="Les OptiControl AI sine vilkår og betingelser for bruk av våre tjenester." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root {
+      --bg:    #020C18;
+      --surf:  #071629;
+      --surf2: #0C1E35;
+      --border:#1A2E48;
+      --cyan:  #00E5FF;
+      --mint:  #00FF94;
+      --grad:  linear-gradient(135deg,#00E5FF 0%,#00FF94 100%);
+      --text:  #E8F4FF;
+      --muted: rgba(232,244,255,.55);
+      --dim:   rgba(232,244,255,.3);
+    }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,'Segoe UI',sans-serif; line-height:1.7; min-height:100vh; }
+
+    /* Nav */
+    nav { position:sticky; top:0; z-index:100; background:rgba(2,12,24,.92); border-bottom:1px solid var(--border); backdrop-filter:blur(12px); padding:.9rem 2rem; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { font-size:.9rem; font-weight:700; color:#fff; text-decoration:none; }
+    .nav-logo em { font-style:normal; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-back { font-size:.8rem; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:.4rem; transition:color .2s; }
+    .nav-back:hover { color:var(--cyan); }
+    .lang-btns { display:flex; gap:.4rem; }
+    .lang-btn { background:transparent; border:1px solid var(--border); color:var(--muted); font-size:.72rem; font-weight:600; padding:.3rem .6rem; border-radius:5px; cursor:pointer; transition:all .2s; letter-spacing:.04em; }
+    .lang-btn.active, .lang-btn:hover { border-color:var(--cyan); color:var(--cyan); }
+
+    /* Content */
+    main { max-width:760px; margin:0 auto; padding:4rem 2rem 6rem; }
+    .page-label { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); margin-bottom:1rem; }
+    h1 { font-size:2rem; font-weight:800; margin-bottom:.5rem; line-height:1.2; }
+    .updated { font-size:.8rem; color:var(--dim); margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+    .updated span { color:var(--muted); }
+
+    .section { margin-bottom:2.5rem; }
+    .section h2 { font-size:1rem; font-weight:700; color:var(--cyan); margin-bottom:.75rem; display:flex; align-items:center; gap:.6rem; }
+    .section h2::before { content:attr(data-num); font-size:.68rem; font-weight:800; background:rgba(0,229,255,.1); border:1px solid rgba(0,229,255,.2); border-radius:4px; padding:.15rem .4rem; color:var(--cyan); flex-shrink:0; }
+    .section p { color:var(--muted); font-size:.9rem; line-height:1.8; margin-bottom:.75rem; }
+    .section ul { list-style:none; padding:0; }
+    .section ul li { color:var(--muted); font-size:.9rem; padding:.35rem 0 .35rem 1.2rem; position:relative; }
+    .section ul li::before { content:'›'; position:absolute; left:0; color:var(--cyan); font-weight:700; }
+
+    .contact-box { background:var(--surf); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.5rem; margin-top:.75rem; display:flex; align-items:center; gap:.75rem; }
+    .contact-box a { color:var(--cyan); text-decoration:none; font-size:.9rem; font-weight:600; }
+    .contact-box a:hover { text-decoration:underline; }
+
+    footer { border-top:1px solid var(--border); padding:2rem; text-align:center; }
+    footer a { color:var(--muted); text-decoration:none; font-size:.8rem; transition:color .2s; }
+    footer a:hover { color:var(--cyan); }
+    footer .sep { color:var(--border); margin:0 .75rem; }
+
+    @media(max-width:600px) {
+      main { padding:2.5rem 1.25rem 4rem; }
+      h1 { font-size:1.5rem; }
+      nav { padding:.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Opti<em>Control</em></a>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="/" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span id="back-label">Tilbake</span>
+    </a>
+    <div class="lang-btns">
+      <button class="lang-btn active" onclick="setLang('no')">NO</button>
+      <button class="lang-btn" onclick="setLang('sv')">SV</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="page-label" id="label-top">Juridisk</div>
+  <h1 id="page-h1">Vilkår og betingelser</h1>
+  <div class="updated" id="updated-line"></div>
+
+  <div class="section">
+    <h2 data-num="01" id="s1-title">Aksept av vilkår</h2>
+    <p id="s1-body">Ved å bruke OptiControl AI sine tjenester aksepterer du disse vilkårene. Hvis du ikke godtar vilkårene, må du ikke bruke tjenestene våre.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="02" id="s2-title">Tjenestebeskrivelse</h2>
+    <p id="s2-body">OptiControl AI tilbyr AI-drevne salgstjenester og konsultering. Vi forbeholder oss retten til å endre eller avslutte tjenester uten varsel.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="03" id="s3-title">Brukeransvar</h2>
+    <p id="s3-intro">Som bruker forplikter du deg til å:</p>
+    <ul id="s3-list">
+      <li>Gi korrekt informasjon</li>
+      <li>Ikke misbruke tjenesten</li>
+      <li>Følge gjeldende lover og regler</li>
+      <li>Respektere immaterielle rettigheter</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 data-num="04" id="s4-title">Betaling og fakturering</h2>
+    <p id="s4-body">Betalingsbetingelser avtales individuelt per kunde. Alle priser er oppgitt eksklusiv merverdiavgift (mva) hvis ikke annet er spesifisert.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="05" id="s5-title">Ansvarsbegrensning</h2>
+    <p id="s5-body">OptiControl AI er ikke ansvarlig for indirekte tap eller skader som følge av bruk av våre tjenester. Vårt ansvar er begrenset til det beløpet som er betalt for tjenesten.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="06" id="s6-title">Immaterielle rettigheter</h2>
+    <p id="s6-body">Alt innhold og materiale på denne nettsiden eies av OptiControl AI og er beskyttet av opphavsrett og andre immaterielle rettigheter.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="07" id="s7-title">Oppsigelse</h2>
+    <p id="s7-body">Vi kan suspendere eller avslutte tilgangen din til tjenestene våre ved brudd på disse vilkårene.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="08" id="s8-title">Endringer i vilkår</h2>
+    <p id="s8-body">Vi kan oppdatere disse vilkårene fra tid til annen. Fortsatt bruk av tjenestene etter endringer betyr at du aksepterer de nye vilkårene.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="09" id="s9-title">Gjeldende lov</h2>
+    <p id="s9-body">Disse vilkårene reguleres av norsk lov. Tvister skal løses i norske domstoler.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-num="10" id="s10-title">Kontakt</h2>
+    <p id="s10-body">Har du spørsmål om vilkårene? Kontakt oss på:</p>
+    <div class="contact-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#00E5FF" stroke-width="1.5"/><polyline points="22,6 12,13 2,6" stroke="#00E5FF" stroke-width="1.5"/></svg>
+      <a href="mailto:ari@opticontrol.ai">ari@opticontrol.ai</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/" id="footer-home">Hjem</a>
+  <span class="sep">·</span>
+  <a href="/privacy.html" id="footer-privacy">Personvernerklæring</a>
+  <span class="sep">·</span>
+  <span style="color:var(--dim);font-size:.8rem;" id="footer-copy">© 2026 OptiControl AI</span>
+</footer>
+
+<script>
+const LANG = {
+  no: {
+    htmlLang: 'nb',
+    pageTitle: 'Vilkår og betingelser — OptiControl AI',
+    pageDesc: 'Les OptiControl AI sine vilkår og betingelser for bruk av våre tjenester.',
+    labelTop: 'Juridisk',
+    pageH1: 'Vilkår og betingelser',
+    updatedPrefix: 'Sist oppdatert:',
+    backLabel: 'Tilbake',
+    s1Title: 'Aksept av vilkår',
+    s1Body: 'Ved å bruke OptiControl AI sine tjenester aksepterer du disse vilkårene. Hvis du ikke godtar vilkårene, må du ikke bruke tjenestene våre.',
+    s2Title: 'Tjenestebeskrivelse',
+    s2Body: 'OptiControl AI tilbyr AI-drevne salgstjenester og konsultering. Vi forbeholder oss retten til å endre eller avslutte tjenester uten varsel.',
+    s3Title: 'Brukeransvar',
+    s3Intro: 'Som bruker forplikter du deg til å:',
+    s3List: ['Gi korrekt informasjon','Ikke misbruke tjenesten','Følge gjeldende lover og regler','Respektere immaterielle rettigheter'],
+    s4Title: 'Betaling og fakturering',
+    s4Body: 'Betalingsbetingelser avtales individuelt per kunde. Alle priser er oppgitt eksklusiv merverdiavgift (mva) hvis ikke annet er spesifisert.',
+    s5Title: 'Ansvarsbegrensning',
+    s5Body: 'OptiControl AI er ikke ansvarlig for indirekte tap eller skader som følge av bruk av våre tjenester. Vårt ansvar er begrenset til det beløpet som er betalt for tjenesten.',
+    s6Title: 'Immaterielle rettigheter',
+    s6Body: 'Alt innhold og materiale på denne nettsiden eies av OptiControl AI og er beskyttet av opphavsrett og andre immaterielle rettigheter.',
+    s7Title: 'Oppsigelse',
+    s7Body: 'Vi kan suspendere eller avslutte tilgangen din til tjenestene våre ved brudd på disse vilkårene.',
+    s8Title: 'Endringer i vilkår',
+    s8Body: 'Vi kan oppdatere disse vilkårene fra tid til annen. Fortsatt bruk av tjenestene etter endringer betyr at du aksepterer de nye vilkårene.',
+    s9Title: 'Gjeldende lov',
+    s9Body: 'Disse vilkårene reguleres av norsk lov. Tvister skal løses i norske domstoler.',
+    s10Title: 'Kontakt',
+    s10Body: 'Har du spørsmål om vilkårene? Kontakt oss på:',
+    footerHome: 'Hjem',
+    footerPrivacy: 'Personvernerklæring',
+    footerCopy: '© 2026 OptiControl AI',
+    dateLocale: 'nb-NO',
+  },
+  sv: {
+    htmlLang: 'sv',
+    pageTitle: 'Villkor och bestämmelser — OptiControl AI',
+    pageDesc: 'Läs OptiControl AI:s villkor och bestämmelser för användning av våra tjänster.',
+    labelTop: 'Juridiskt',
+    pageH1: 'Villkor och bestämmelser',
+    updatedPrefix: 'Senast uppdaterad:',
+    backLabel: 'Tillbaka',
+    s1Title: 'Godkännande av villkor',
+    s1Body: 'Genom att använda OptiControl AI:s tjänster godkänner du dessa villkor. Om du inte godkänner villkoren får du inte använda våra tjänster.',
+    s2Title: 'Tjänstebeskrivning',
+    s2Body: 'OptiControl AI erbjuder AI-drivna försäljningstjänster och konsulttjänster. Vi förbehåller oss rätten att ändra eller avsluta tjänster utan förvarning.',
+    s3Title: 'Användaransvar',
+    s3Intro: 'Som användare förbinder du dig att:',
+    s3List: ['Lämna korrekt information','Inte missbruka tjänsten','Följa gällande lagar och regler','Respektera immateriella rättigheter'],
+    s4Title: 'Betalning och fakturering',
+    s4Body: 'Betalningsvillkor avtalas individuellt per kund. Alla priser anges exklusive mervärdesskatt (moms) om inget annat anges.',
+    s5Title: 'Ansvarsbegränsning',
+    s5Body: 'OptiControl AI är inte ansvarig för indirekta förluster eller skador till följd av användning av våra tjänster. Vårt ansvar är begränsat till det belopp som betalats för tjänsten.',
+    s6Title: 'Immateriella rättigheter',
+    s6Body: 'Allt innehåll och material på denna webbplats ägs av OptiControl AI och är skyddat av upphovsrätt och andra immateriella rättigheter.',
+    s7Title: 'Uppsägning',
+    s7Body: 'Vi kan stänga av eller avsluta din åtkomst till våra tjänster vid brott mot dessa villkor.',
+    s8Title: 'Ändringar av villkor',
+    s8Body: 'Vi kan uppdatera dessa villkor från tid till annan. Fortsatt användning av tjänsterna efter ändringar innebär att du godkänner de nya villkoren.',
+    s9Title: 'Tillämplig lag',
+    s9Body: 'Dessa villkor regleras av norsk lag. Tvister ska lösas i norska domstolar.',
+    s10Title: 'Kontakt',
+    s10Body: 'Har du frågor om villkoren? Kontakta oss på:',
+    footerHome: 'Hem',
+    footerPrivacy: 'Integritetspolicy',
+    footerCopy: '© 2026 OptiControl AI',
+    dateLocale: 'sv-SE',
+  },
+  en: {
+    htmlLang: 'en',
+    pageTitle: 'Terms and Conditions — OptiControl AI',
+    pageDesc: 'Read OptiControl AI\'s terms and conditions for use of our services.',
+    labelTop: 'Legal',
+    pageH1: 'Terms and Conditions',
+    updatedPrefix: 'Last updated:',
+    backLabel: 'Back',
+    s1Title: 'Acceptance of Terms',
+    s1Body: 'By using OptiControl AI\'s services, you accept these terms. If you do not agree to the terms, you must not use our services.',
+    s2Title: 'Service Description',
+    s2Body: 'OptiControl AI offers AI-powered sales services and consulting. We reserve the right to change or discontinue services without notice.',
+    s3Title: 'User Responsibilities',
+    s3Intro: 'As a user, you commit to:',
+    s3List: ['Providing accurate information','Not misusing the service','Following applicable laws and regulations','Respecting intellectual property rights'],
+    s4Title: 'Payment and Billing',
+    s4Body: 'Payment terms are agreed individually per customer. All prices are quoted exclusive of VAT unless otherwise specified.',
+    s5Title: 'Limitation of Liability',
+    s5Body: 'OptiControl AI is not liable for indirect losses or damages resulting from use of our services. Our liability is limited to the amount paid for the service.',
+    s6Title: 'Intellectual Property',
+    s6Body: 'All content and material on this website is owned by OptiControl AI and is protected by copyright and other intellectual property rights.',
+    s7Title: 'Termination',
+    s7Body: 'We may suspend or terminate your access to our services upon breach of these terms.',
+    s8Title: 'Changes to Terms',
+    s8Body: 'We may update these terms from time to time. Continued use of the services after changes means you accept the new terms.',
+    s9Title: 'Governing Law',
+    s9Body: 'These terms are governed by Norwegian law. Disputes shall be resolved in Norwegian courts.',
+    s10Title: 'Contact',
+    s10Body: 'Do you have questions about the terms? Contact us at:',
+    footerHome: 'Home',
+    footerPrivacy: 'Privacy Policy',
+    footerCopy: '© 2026 OptiControl AI',
+    dateLocale: 'en-GB',
+  }
+};
+
+function formatDate(locale) {
+  return new Date().toLocaleDateString(locale, {day:'numeric', month:'long', year:'numeric'});
+}
+
+function setLang(lang) {
+  const t = LANG[lang];
+  document.documentElement.lang = t.htmlLang;
+  document.getElementById('page-title').textContent = t.pageTitle;
+  document.querySelector('meta[name="description"]').content = t.pageDesc;
+  document.getElementById('label-top').textContent = t.labelTop;
+  document.getElementById('page-h1').textContent = t.pageH1;
+  document.getElementById('updated-line').innerHTML = t.updatedPrefix + ' <span>' + formatDate(t.dateLocale) + '</span>';
+  document.getElementById('back-label').textContent = t.backLabel;
+  document.getElementById('s1-title').textContent = t.s1Title;
+  document.getElementById('s1-body').textContent = t.s1Body;
+  document.getElementById('s2-title').textContent = t.s2Title;
+  document.getElementById('s2-body').textContent = t.s2Body;
+  document.getElementById('s3-title').textContent = t.s3Title;
+  document.getElementById('s3-intro').textContent = t.s3Intro;
+  const list = document.getElementById('s3-list');
+  list.innerHTML = t.s3List.map(i => '<li>' + i + '</li>').join('');
+  document.getElementById('s4-title').textContent = t.s4Title;
+  document.getElementById('s4-body').textContent = t.s4Body;
+  document.getElementById('s5-title').textContent = t.s5Title;
+  document.getElementById('s5-body').textContent = t.s5Body;
+  document.getElementById('s6-title').textContent = t.s6Title;
+  document.getElementById('s6-body').textContent = t.s6Body;
+  document.getElementById('s7-title').textContent = t.s7Title;
+  document.getElementById('s7-body').textContent = t.s7Body;
+  document.getElementById('s8-title').textContent = t.s8Title;
+  document.getElementById('s8-body').textContent = t.s8Body;
+  document.getElementById('s9-title').textContent = t.s9Title;
+  document.getElementById('s9-body').textContent = t.s9Body;
+  document.getElementById('s10-title').textContent = t.s10Title;
+  document.getElementById('s10-body').textContent = t.s10Body;
+  document.getElementById('footer-home').textContent = t.footerHome;
+  document.getElementById('footer-privacy').textContent = t.footerPrivacy;
+  document.getElementById('footer-copy').textContent = t.footerCopy;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+}
+
+setLang('no');
+</script>
+</body>
+</html>
