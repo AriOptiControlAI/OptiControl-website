@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer';
+const browser = await puppeteer.launch({headless:true,args:['--no-sandbox']});
+const page = await browser.newPage();
+await page.setViewport({width:1440,height:900});
+await page.goto('http://localhost:3001',{waitUntil:'networkidle0'});
+await new Promise(r=>setTimeout(r,1200));
+const el = await page.$('#trust');
+await el.screenshot({path:'temporary screenshots/screenshot-7-trust-crop.png'});
+await browser.close();
+console.log('done');
