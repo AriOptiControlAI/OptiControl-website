@@ -569,6 +569,10 @@
     .cta-in { max-width:580px;margin:0 auto;position:relative;z-index:1; }
     .cta-sub { font-size:.92rem;color:var(--muted);line-height:1.75;margin:1rem auto 2.5rem; }
 
+    .ob-soft-link { display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border-h);padding-bottom:2px;transition:color .18s,border-color .18s; }
+    .ob-soft-link::before { content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0; }
+    .ob-soft-link:hover { color:var(--text);border-bottom-color:var(--cyan); }
+
     .ob-lead-card { max-width:600px;margin:0 auto;text-align:center;background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:2.75rem 2.25rem;transition:border-color .3s; }
     .ob-lead-card:hover { border-color:var(--border-h); }
     .ob-lead-card h3 { font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:600;letter-spacing:-.02em;line-height:1.25;color:#fff;margin-bottom:.75rem; }
@@ -1669,11 +1673,8 @@
     </a>
   </div>
 
-  <div class="ob-lead-card rv" style="margin-top:2.5rem;">
-    <div class="label" style="justify-content:center;" data-i18n-html="onboarding.label"><span class="dot"></span>Ikke klar for en samtale ennå?</div>
-    <h3 data-i18n-html="onboarding.h3">Få din skreddersydde <span class="gt">agentiske infrastruktur</span></h3>
-    <p data-i18n="onboarding.sub">Fyll ut noen raske spørsmål om virksomheten din, så presenterer vi en komplett tilpasset plan — helt uten forpliktelser.</p>
-    <a href="/onboarding" target="_blank" rel="noopener noreferrer" class="btn-nav" data-i18n="onboarding.btn">Få din skreddersydde plan →</a>
+  <div style="text-align:center;margin-top:1.5rem;">
+    <a href="/onboarding" target="_blank" rel="noopener noreferrer" class="ob-soft-link" data-i18n="onboarding.softlink">Ikke klar for en samtale? Fyll ut skjemaet i stedet →</a>
   </div>
 
 </div><!-- /demo -->
@@ -2413,6 +2414,7 @@ no:{
   'n8n.icp.sub':'Omsetning · Ansatte · Signal','n8n.enrich.sub':'Navn · Tittel · Kontakt','n8n.ai.sub':'GPT-4 · Personalisert','n8n.human.sub':'Rådgiver følger opp',
   'demo.n8n.label':'<span class="dot"></span>n8n workflow · agentisk pipeline',
   'demo.n8n.scroll':'Bla for å se hele flyten','demo.cta':'Forespør infrastruktur tilgang →',
+  'onboarding.softlink':'Ikke klar for en samtale? Fyll ut skjemaet i stedet →',
   'demo.run.btn':'Kjør agent','demo.sent.bar':'Melding sendt · Sekvens startet','demo.running':'kjører…','demo.done':'ferdig ✓',
   'demo.prog.prefix':'Analyserer','demo.prog.suffix':'selskaper…','demo.enriching':'Starter enrichment for beslutningstaker…',
   'hybrid.label':'<span class="dot"></span>Hybridmodellen',
@@ -2545,6 +2547,7 @@ sv:{
   'n8n.icp.sub':'Omsättning · Anställda · Signal','n8n.enrich.sub':'Namn · Titel · Kontakt','n8n.ai.sub':'GPT-4 · Personaliserat','n8n.human.sub':'Rådgivare följer upp',
   'demo.n8n.label':'<span class="dot"></span>n8n workflow · agentisk pipeline',
   'demo.n8n.scroll':'Scrolla för att se hela flödet','demo.cta':'Begär infrastrukturtillgång →',
+  'onboarding.softlink':'Inte redo för ett samtal? Fyll i formuläret istället →',
   'demo.run.btn':'Kör agent','demo.sent.bar':'Meddelande skickat · Sekvens startad','demo.running':'kör…','demo.done':'klar ✓',
   'demo.prog.prefix':'Analyserar','demo.prog.suffix':'företag…','demo.enriching':'Startar enrichment för beslutsfattare…',
   'hybrid.label':'<span class="dot"></span>Hybridmodellen',
@@ -2677,6 +2680,7 @@ en:{
   'n8n.icp.sub':'Revenue · Employees · Signal','n8n.enrich.sub':'Name · Title · Contact','n8n.ai.sub':'GPT-4 · Personalized','n8n.human.sub':'Advisor follows up',
   'demo.n8n.label':'<span class="dot"></span>n8n workflow · agentic pipeline',
   'demo.n8n.scroll':'Scroll to see the full flow','demo.cta':'Request infrastructure access →',
+  'onboarding.softlink':'Not ready for a call? Fill out the form instead →',
   'demo.run.btn':'Run agent','demo.sent.bar':'Message sent · Sequence started','demo.running':'running…','demo.done':'done ✓',
   'demo.prog.prefix':'Analysing','demo.prog.suffix':'companies…','demo.enriching':'Starting enrichment for decision maker…',
   'hybrid.label':'<span class="dot"></span>The Hybrid Model',
