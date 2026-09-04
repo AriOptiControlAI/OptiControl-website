@@ -569,6 +569,12 @@
     .cta-in { max-width:580px;margin:0 auto;position:relative;z-index:1; }
     .cta-sub { font-size:.92rem;color:var(--muted);line-height:1.75;margin:1rem auto 2.5rem; }
 
+    .ob-lead-card { max-width:600px;margin:0 auto;text-align:center;background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:2.75rem 2.25rem;transition:border-color .3s; }
+    .ob-lead-card:hover { border-color:var(--border-h); }
+    .ob-lead-card h3 { font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:600;letter-spacing:-.02em;line-height:1.25;color:#fff;margin-bottom:.75rem; }
+    .ob-lead-card p { font-size:.88rem;color:var(--muted);line-height:1.7;max-width:440px;margin:0 auto 1.75rem; }
+    .ob-lead-card .btn-nav { font-size:.85rem;padding:.7rem 1.6rem; }
+
     /* ── Footer ──────────────────────────────── */
     footer { border-top:1px solid var(--border);background:var(--surf);padding:3.5rem 2.5rem 2rem; }
     .foot-main { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border); }
@@ -2236,6 +2242,16 @@
   </div>
 </div>
 
+<!-- ═══ ONBOARDING LEAD MAGNET ════════════════════════════ -->
+<div id="onboarding-lead" class="wrap" style="padding-top:0;padding-bottom:4rem;">
+  <div class="ob-lead-card rv">
+    <div class="label" style="justify-content:center;" data-i18n-html="onboarding.label"><span class="dot"></span>Ikke klar for en samtale ennå?</div>
+    <h3 data-i18n-html="onboarding.h3">Få din skreddersydde <span class="gt">agentiske infrastruktur</span></h3>
+    <p data-i18n="onboarding.sub">Fyll ut noen raske spørsmål om virksomheten din, så presenterer vi en komplett tilpasset plan — helt uten forpliktelser.</p>
+    <a href="/onboarding" class="btn-nav" data-i18n="onboarding.btn">Start onboarding →</a>
+  </div>
+</div>
+
 <!-- ═══ FOOTER ════════════════════════════════════════════ -->
 <footer>
   <div class="foot-main">
@@ -2458,6 +2474,10 @@ no:{
   'cta.h2':'Klar til å motta varme<br>muligheter — <span class="gt">ikke støy?</span>',
   'cta.sub':'Book en gratis 30-minutters strategisamtale. Vi kartlegger din ICP, viser deg nøyaktig hvilke signaler vi overvåker i ditt marked, og gir deg en live demo av rutingslaget.',
   'cta.btn':'Forespør infrastruktur tilgang →','cta.disclaimer':'Ingen forpliktelse. Ingen salgspresjon. Bare en klar plan for veksten din.',
+  'onboarding.label':'<span class="dot"></span>Ikke klar for en samtale ennå?',
+  'onboarding.h3':'Få din skreddersydde <span class="gt">agentiske infrastruktur</span>',
+  'onboarding.sub':'Fyll ut noen raske spørsmål om virksomheten din, så presenterer vi en komplett tilpasset plan — helt uten forpliktelser.',
+  'onboarding.btn':'Start onboarding →',
   'team.label':'<span class="dot"></span>Teamet bak','team.h2':'Menneskene som ruter.','team.sub':'Teknologi og erfaring i ett — vi bygger infrastrukturen og følger opp personlig.',
   'team.contact.phone':'Telefon','team.contact.email':'Email',
   'team.linkedin.btn':'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>Min LinkedIn Profil',
@@ -2586,6 +2606,10 @@ sv:{
   'cta.h2':'Redo att ta emot varma<br>möjligheter — <span class="gt">inte brus?</span>',
   'cta.sub':'Boka ett gratis 30-minutersstrategimöte. Vi kartlägger din ICP, visar dig exakt vilka signaler vi övervakar på din marknad och ger dig en live-demo av routinglagret.',
   'cta.btn':'Begär infrastrukturtillgång →','cta.disclaimer':'Ingen förpliktelse. Inget försäljningstryck. Bara en tydlig plan för din tillväxt.',
+  'onboarding.label':'<span class="dot"></span>Inte redo för ett samtal än?',
+  'onboarding.h3':'Få din skräddarsydda <span class="gt">agentiska infrastruktur</span>',
+  'onboarding.sub':'Fyll i några snabba frågor om din verksamhet, så tar vi fram en komplett skräddarsydd plan — helt utan förpliktelser.',
+  'onboarding.btn':'Starta onboarding →',
   'team.label':'<span class="dot"></span>Teamet bakom','team.h2':'Människorna som routar.','team.sub':'Teknologi och erfarenhet i ett — vi bygger infrastrukturen och följer upp personligt.',
   'team.contact.phone':'Telefon','team.contact.email':'E-post',
   'team.linkedin.btn':'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>Min LinkedIn-profil',
@@ -2714,6 +2738,10 @@ en:{
   'cta.h2':'Ready to receive warm<br>opportunities — <span class="gt">not noise?</span>',
   'cta.sub':'Book a free 30-minute strategy call. We\'ll map your ICP, show you exactly which signals we monitor in your market, and give you a live demo of the routing layer.',
   'cta.btn':'Request infrastructure access →','cta.disclaimer':'No commitment. No sales pressure. Just a clear plan for your growth.',
+  'onboarding.label':'<span class="dot"></span>Not ready for a call yet?',
+  'onboarding.h3':'Get your tailored <span class="gt">agentic infrastructure</span>',
+  'onboarding.sub':'Fill in a few quick questions about your business, and we\'ll put together a complete tailored plan — no commitment required.',
+  'onboarding.btn':'Start onboarding →',
   'team.label':'<span class="dot"></span>The team behind','team.h2':'The people who route.','team.sub':'Technology and experience in one — we build the infrastructure and follow up personally.',
   'team.contact.phone':'Phone','team.contact.email':'Email',
   'team.linkedin.btn':'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>My LinkedIn Profile',
