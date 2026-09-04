@@ -267,7 +267,7 @@
     </div>
     <div class="field">
       <label class="f-label"><span data-no="Hvilke stillingstitler kontakter dere?" data-en="Which job titles do you target?">Hvilke stillingstitler kontakter dere?</span><span class="req">*</span></label>
-      <div class="options-grid">
+      <div class="options-grid" id="stilling-grid">
         <label class="opt-label"><input type="checkbox" value="CEO/Daglig leder"/><span class="opt-check"></span>CEO / Daglig leder</label>
         <label class="opt-label"><input type="checkbox" value="Salgssjef"/><span class="opt-check"></span><span data-no="Salgssjef / CCO" data-en="Sales Director / CCO">Salgssjef / CCO</span></label>
         <label class="opt-label"><input type="checkbox" value="CMO/Markedssjef"/><span class="opt-check"></span>CMO / Markedssjef</label>
@@ -277,6 +277,7 @@
         <label class="opt-label"><input type="checkbox" value="Eier"/><span class="opt-check"></span><span data-no="Eier / Gründer" data-en="Owner / Founder">Eier / Gründer</span></label>
         <label class="opt-label"><input type="checkbox" value="Innkjøpssjef"/><span class="opt-check"></span><span data-no="Innkjøp / Procurement" data-en="Procurement">Innkjøp / Procurement</span></label>
       </div>
+      <input type="text" id="f-stilling-annet" style="margin-top:.6rem;" data-placeholder-no="Passer ingen av disse, eller mangler noen? Fyll inn nøyaktig her..." data-placeholder-en="None of these fit, or missing one? Fill in exactly here..." placeholder="Passer ingen av disse, eller mangler noen? Fyll inn nøyaktig her..."/>
     </div>
     <div class="field">
       <label class="f-label"><span data-no="Geografisk fokus" data-en="Geographic focus">Geografisk fokus</span><span class="req">*</span></label>
@@ -561,6 +562,12 @@
     if (other) checked.push(other);
     return checked.join(', ');
   }
+  function targetTitles() {
+    const checked = [...document.querySelectorAll('#stilling-grid input[type=checkbox]:checked')].map(i=>i.value);
+    const other = getVal('f-stilling-annet').trim();
+    if (other) checked.push(other);
+    return checked.join(', ');
+  }
 
   function buildSummary() {
     const rows = [
@@ -593,7 +600,7 @@
       Verdiforslag: getVal('f-verdi'),
       USP: getVal('f-usp'),
       Målbransjer: targetIndustries(),
-      Stillingstitler: checkedInStep(3),
+      Stillingstitler: targetTitles(),
       Geografi: checkedInStep(3),
       Selskapsstørrelse: checkedInStep(4),
       Omsetning_mål: checkedInStep(4),
