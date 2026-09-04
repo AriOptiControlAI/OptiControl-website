@@ -148,7 +148,7 @@
 <body>
 
 <nav id="nav">
-  <a class="nav-logo" href="https://opticontrol.ai">Opti<em>Control</em><span class="nav-sub">Onboarding</span></a>
+  <a class="nav-logo" href="https://opticontrol.ai"><span class="brand-name">Opti<em>Control</em></span><span class="nav-sub">Onboarding</span></a>
   <div class="lang-toggle">
     <button class="lang-btn active" onclick="setLang('no')" id="btn-no">🇳🇴 NO</button>
     <button class="lang-btn" onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
@@ -253,7 +253,7 @@
     </div>
     <div class="field">
       <label class="f-label"><span data-no="Hvilke bransjer selger dere til?" data-en="Which industries do you sell to?">Hvilke bransjer selger dere til?</span><span class="req">*</span></label>
-      <div class="options-grid">
+      <div class="options-grid" id="industri-grid">
         <label class="opt-label"><input type="checkbox" value="SaaS / Tech"/><span class="opt-check"></span><span data-no="SaaS / Tech" data-en="SaaS / Tech">SaaS / Tech</span></label>
         <label class="opt-label"><input type="checkbox" value="Finans"/><span class="opt-check"></span><span data-no="Finans & Forsikring" data-en="Finance & Insurance">Finans & Forsikring</span></label>
         <label class="opt-label"><input type="checkbox" value="Eiendom"/><span class="opt-check"></span><span data-no="Eiendom & Bygg" data-en="Real Estate & Construction">Eiendom & Bygg</span></label>
@@ -263,6 +263,7 @@
         <label class="opt-label"><input type="checkbox" value="Konsulent"/><span class="opt-check"></span><span data-no="Konsulentvirksomhet" data-en="Consulting">Konsulentvirksomhet</span></label>
         <label class="opt-label"><input type="checkbox" value="Alle bransjer"/><span class="opt-check"></span><span data-no="Alle bransjer" data-en="All industries">Alle bransjer</span></label>
       </div>
+      <input type="text" id="f-bransje-annet" style="margin-top:.6rem;" data-placeholder-no="Passer ingen av disse? Fyll inn nøyaktig her..." data-placeholder-en="None of these fit? Fill in exactly here..." placeholder="Passer ingen av disse? Fyll inn nøyaktig her..."/>
     </div>
     <div class="field">
       <label class="f-label"><span data-no="Hvilke stillingstitler kontakter dere?" data-en="Which job titles do you target?">Hvilke stillingstitler kontakter dere?</span><span class="req">*</span></label>
@@ -554,6 +555,12 @@
   function getRadio(name) { const el = document.querySelector(`input[name="${name}"]:checked`); return el ? el.value : ''; }
   function getVal(id) { const el = document.getElementById(id); return el ? el.value : ''; }
   function checkedInStep(step) { return [...document.querySelectorAll(`.step[data-step="${step}"] input[type=checkbox]:checked`)].map(i=>i.value).join(', '); }
+  function targetIndustries() {
+    const checked = [...document.querySelectorAll('#industri-grid input[type=checkbox]:checked')].map(i=>i.value);
+    const other = getVal('f-bransje-annet').trim();
+    if (other) checked.push(other);
+    return checked.join(', ');
+  }
 
   function buildSummary() {
     const rows = [
@@ -563,7 +570,7 @@
       [lang==='no'?'Rolle':'Role', getVal('f-rolle')],
       [lang==='no'?'Nettside':'Website', getVal('f-nettside')],
       [lang==='no'?'Produkt/tjeneste':'Product/service', getVal('f-produkt')],
-      [lang==='no'?'Målbransjer':'Target industries', checkedInStep(3)],
+      [lang==='no'?'Målbransjer':'Target industries', targetIndustries()],
       [lang==='no'?'Selskapsstørrelse':'Company size', checkedInStep(4)],
       [lang==='no'?'Primærmål':'Primary goal', getRadio('primaermal')],
       [lang==='no'?'Møter/mnd':'Meetings/month', getVal('f-moeter')],
@@ -585,7 +592,7 @@
       Produkt: getVal('f-produkt'),
       Verdiforslag: getVal('f-verdi'),
       USP: getVal('f-usp'),
-      Målbransjer: checkedInStep(3),
+      Målbransjer: targetIndustries(),
       Stillingstitler: checkedInStep(3),
       Geografi: checkedInStep(3),
       Selskapsstørrelse: checkedInStep(4),
