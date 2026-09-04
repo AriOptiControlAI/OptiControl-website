@@ -157,7 +157,8 @@
 
     /* Microstats */
     .hero-ms { display:flex;gap:2.5rem;padding-top:1.25rem;border-top:1px solid var(--border);animation:fadeUp .9s .35s ease both; }
-    .hero-soft-link { display:inline-block;margin-bottom:1rem;font-size:.78rem;color:var(--dim);text-decoration:none;border-bottom:1px dashed var(--border-h);padding-bottom:1px;transition:color .18s,border-color .18s;animation:fadeUp .9s .3s ease both; }
+    .hero-soft-link { display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1.15rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border-h);padding-bottom:2px;transition:color .18s,border-color .18s;animation:fadeUp .9s .3s ease both; }
+    .hero-soft-link::before { content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0; }
     .hero-soft-link:hover { color:var(--text);border-bottom-color:var(--cyan); }
     .hms-num { font-size:1.55rem;font-weight:700;letter-spacing:-.03em;display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
     .hms-lbl { font-size:.7rem;color:var(--muted);letter-spacing:.02em; }
