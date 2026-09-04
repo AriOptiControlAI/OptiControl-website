@@ -157,6 +157,8 @@
 
     /* Microstats */
     .hero-ms { display:flex;gap:2.5rem;padding-top:1.25rem;border-top:1px solid var(--border);animation:fadeUp .9s .35s ease both; }
+    .hero-soft-link { display:inline-block;margin-bottom:1rem;font-size:.78rem;color:var(--dim);text-decoration:none;border-bottom:1px dashed var(--border-h);padding-bottom:1px;transition:color .18s,border-color .18s;animation:fadeUp .9s .3s ease both; }
+    .hero-soft-link:hover { color:var(--text);border-bottom-color:var(--cyan); }
     .hms-num { font-size:1.55rem;font-weight:700;letter-spacing:-.03em;display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
     .hms-lbl { font-size:.7rem;color:var(--muted);letter-spacing:.02em; }
 
@@ -1196,6 +1198,8 @@
       <a href="https://cal.com/arianit-shala-sdsswn/ai-konsultasjon-opticontrol-ai?duration=30" target="_blank" rel="noopener noreferrer" class="btn-p" data-i18n="hero.cta.primary">Få tilgang til nettverket →</a>
       <a href="#prosess" class="btn-g" data-i18n="hero.cta.secondary">Se hvordan det fungerer</a>
     </div>
+
+    <a href="/onboarding" target="_blank" rel="noopener noreferrer" class="hero-soft-link" data-i18n="hero.onboarding.link">Ikke klar for en samtale? Fyll ut skjemaet i stedet →</a>
 
     <div class="hero-ms">
       <div><span class="hms-num">20+</span><span class="hms-lbl" data-i18n="hero.stat1.lbl">Kunder i Skandinavia</span></div>
@@ -2248,7 +2252,7 @@
     <div class="label" style="justify-content:center;" data-i18n-html="onboarding.label"><span class="dot"></span>Ikke klar for en samtale ennå?</div>
     <h3 data-i18n-html="onboarding.h3">Få din skreddersydde <span class="gt">agentiske infrastruktur</span></h3>
     <p data-i18n="onboarding.sub">Fyll ut noen raske spørsmål om virksomheten din, så presenterer vi en komplett tilpasset plan — helt uten forpliktelser.</p>
-    <a href="/onboarding" class="btn-nav" data-i18n="onboarding.btn">Start onboarding →</a>
+    <a href="/onboarding" target="_blank" rel="noopener noreferrer" class="btn-nav" data-i18n="onboarding.btn">Få din skreddersydde plan →</a>
   </div>
 </div>
 
@@ -2366,6 +2370,7 @@ no:{
   'hero.h1':'Bedrifter jager leads.',
   'hero.sub':'OptiControl overvåker kjøpssignaler i markedet og kobler interesserte kjøpere direkte til bedriftene de allerede leter etter — varm, relevant og presis.',
   'hero.cta.primary':'Få tilgang til nettverket →','hero.cta.secondary':'Se hvordan det fungerer',
+  'hero.onboarding.link':'Ikke klar for en samtale? Fyll ut skjemaet i stedet →',
   'hero.stat1.lbl':'Kunder i Skandinavia','hero.stat2.num':'3 uker','hero.stat2.lbl':'Til første tilkobling','hero.stat3.lbl':'B2B-bedrifter koblet',
   'hero.infra.sub':'Utviklet og driftet av OptiControl.',
   'hero.infra.badge':'<span class="dot"></span>Proprietær agentisk infrastruktur.',
@@ -2477,7 +2482,7 @@ no:{
   'onboarding.label':'<span class="dot"></span>Ikke klar for en samtale ennå?',
   'onboarding.h3':'Få din skreddersydde <span class="gt">agentiske infrastruktur</span>',
   'onboarding.sub':'Fyll ut noen raske spørsmål om virksomheten din, så presenterer vi en komplett tilpasset plan — helt uten forpliktelser.',
-  'onboarding.btn':'Start onboarding →',
+  'onboarding.btn':'Få din skreddersydde plan →',
   'team.label':'<span class="dot"></span>Teamet bak','team.h2':'Menneskene som ruter.','team.sub':'Teknologi og erfaring i ett — vi bygger infrastrukturen og følger opp personlig.',
   'team.contact.phone':'Telefon','team.contact.email':'Email',
   'team.linkedin.btn':'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>Min LinkedIn Profil',
@@ -2498,6 +2503,7 @@ sv:{
   'hero.h1':'Företag jagar leads.',
   'hero.sub':'OptiControl övervakar köpsignaler på marknaden och kopplar intresserade köpare direkt till företagen de redan letar efter — varmt, relevant och precist.',
   'hero.cta.primary':'Få tillgång till nätverket →','hero.cta.secondary':'Se hur det fungerar',
+  'hero.onboarding.link':'Inte redo för ett samtal? Fyll i formuläret istället →',
   'hero.stat1.lbl':'Kunder i Skandinavien','hero.stat2.num':'3 veckor','hero.stat2.lbl':'Till första anslutning','hero.stat3.lbl':'B2B-företag anslutna',
   'hero.infra.sub':'Utvecklad och driven av OptiControl.',
   'hero.infra.badge':'<span class="dot"></span>Proprietär agentisk infrastruktur.',
@@ -2609,7 +2615,7 @@ sv:{
   'onboarding.label':'<span class="dot"></span>Inte redo för ett samtal än?',
   'onboarding.h3':'Få din skräddarsydda <span class="gt">agentiska infrastruktur</span>',
   'onboarding.sub':'Fyll i några snabba frågor om din verksamhet, så tar vi fram en komplett skräddarsydd plan — helt utan förpliktelser.',
-  'onboarding.btn':'Starta onboarding →',
+  'onboarding.btn':'Få din skräddarsydda plan →',
   'team.label':'<span class="dot"></span>Teamet bakom','team.h2':'Människorna som routar.','team.sub':'Teknologi och erfarenhet i ett — vi bygger infrastrukturen och följer upp personligt.',
   'team.contact.phone':'Telefon','team.contact.email':'E-post',
   'team.linkedin.btn':'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>Min LinkedIn-profil',
@@ -2630,6 +2636,7 @@ en:{
   'hero.h1':'Companies chase leads.',
   'hero.sub':'OptiControl monitors buying signals in the market and connects interested buyers directly with the companies they\'re already looking for — warm, relevant, and precise.',
   'hero.cta.primary':'Get Network Access →','hero.cta.secondary':'See How It Works',
+  'hero.onboarding.link':'Not ready for a call? Fill out the form instead →',
   'hero.stat1.lbl':'Clients in Scandinavia','hero.stat2.num':'3 weeks','hero.stat2.lbl':'To first connection','hero.stat3.lbl':'B2B companies connected',
   'hero.infra.sub':'Built and operated by OptiControl.',
   'hero.infra.badge':'<span class="dot"></span>Proprietary agentic infrastructure.',
@@ -2741,7 +2748,7 @@ en:{
   'onboarding.label':'<span class="dot"></span>Not ready for a call yet?',
   'onboarding.h3':'Get your tailored <span class="gt">agentic infrastructure</span>',
   'onboarding.sub':'Fill in a few quick questions about your business, and we\'ll put together a complete tailored plan — no commitment required.',
-  'onboarding.btn':'Start onboarding →',
+  'onboarding.btn':'Get your tailored plan →',
   'team.label':'<span class="dot"></span>The team behind','team.h2':'The people who route.','team.sub':'Technology and experience in one — we build the infrastructure and follow up personally.',
   'team.contact.phone':'Phone','team.contact.email':'Email',
   'team.linkedin.btn':'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>My LinkedIn Profile',
