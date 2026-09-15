@@ -1069,7 +1069,7 @@
       document.head.appendChild(s);
     }
     // Auto-load if already consented
-    try{ if(localStorage.getItem('oc-cookie-consent')==='accepted') loadVercelAnalytics(); }catch(e){}
+    try{ loadVercelAnalytics(); }catch(e){}
   </script>
 
   <style>
