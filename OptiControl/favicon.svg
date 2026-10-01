@@ -1,20 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2038"/>
+      <stop offset="100%" stop-color="#050E1C"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#00E5FF"/>
       <stop offset="100%" stop-color="#00FF94"/>
-    </linearGradient>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0A1628"/>
-      <stop offset="100%" stop-color="#050E1C"/>
     </linearGradient>
   </defs>
   <!-- Background -->
   <rect width="64" height="64" rx="14" fill="url(#bg)"/>
   <!-- Subtle border -->
-  <rect width="64" height="64" rx="14" fill="none" stroke="rgba(0,229,255,0.18)" stroke-width="1.2"/>
-  <!-- O — white -->
-  <text x="8" y="46" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="800" font-size="38" fill="#ffffff" letter-spacing="-1">O</text>
-  <!-- C — cyan gradient -->
-  <text x="34" y="46" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="800" font-size="38" fill="url(#cg)" letter-spacing="-1">C</text>
+  <rect width="64" height="64" rx="14" fill="none" stroke="rgba(0,229,255,0.35)" stroke-width="1.4"/>
+  <!-- Bolt — same approved silhouette used across the brand (app logo, invoice, signature, LinkedIn) -->
+  <path d="M 39 5 L 21 34 L 30 34 L 25 59 L 43 26 L 34 26 Z" fill="url(#bolt)"/>
 </svg>
