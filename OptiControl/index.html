@@ -72,8 +72,9 @@
       transition:background .3s,backdrop-filter .3s,border-color .3s,padding .3s;
     }
     #nav.sc { background:rgba(2,12,24,.88);backdrop-filter:blur(22px);border-color:var(--border);padding:1rem 2.5rem; }
-    .nav-logo { font-size:.9rem;font-weight:700;letter-spacing:-.01em;color:#ffffff;text-decoration:none; }
+    .nav-logo { display:flex;align-items:center;gap:.55rem;font-size:.9rem;font-weight:700;letter-spacing:-.01em;color:#ffffff;text-decoration:none; }
     .nav-logo em { font-style:normal;background:linear-gradient(135deg,#00E5FF 0%,#00FF94 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+    .nav-logo-icon { width:26px;height:26px;flex-shrink:0; }
     .nav-links { display:flex;gap:2rem;list-style:none; }
     .nav-links a { font-size:.8rem;color:var(--muted);text-decoration:none;transition:color .18s; }
     .nav-links a:hover { color:var(--text); }
@@ -583,8 +584,9 @@
     footer { border-top:1px solid var(--border);background:var(--surf);padding:3.5rem 2.5rem 2rem; }
     .foot-main { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border); }
     .foot-col { display:flex;flex-direction:column; }
-    .f-logo-big { font-size:1.35rem;font-weight:800;font-family:'Syne',sans-serif;text-decoration:none;margin-bottom:1rem;color:#ffffff; }
+    .f-logo-big { display:flex;align-items:center;gap:.6rem;font-size:1.35rem;font-weight:800;font-family:'Syne',sans-serif;text-decoration:none;margin-bottom:1rem;color:#ffffff; }
     .f-logo-big em { font-style:normal;background:linear-gradient(135deg,#00E5FF 0%,#00FF94 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+    .f-logo-icon { width:34px;height:34px;flex-shrink:0; }
     .foot-desc { font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem; }
     .foot-badges { display:flex;gap:.5rem;flex-wrap:wrap; }
     .foot-badge { font-size:.65rem;font-weight:600;letter-spacing:.06em;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:.25rem .65rem; }
@@ -1147,7 +1149,22 @@
 
 <!-- ═══ NAV ═══════════════════════════════════════════════ -->
 <nav id="nav">
-  <a href="#" class="nav-logo">Opti<em>Control</em></a>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="navBadgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0F2038"/><stop offset="100%" stop-color="#050E1C"/>
+        </linearGradient>
+        <linearGradient id="navBolt" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#00FF94"/>
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="144" height="144" rx="32" fill="url(#navBadgeBg)"/>
+      <rect x="8" y="8" width="144" height="144" rx="32" fill="none" stroke="rgba(0,229,255,0.35)" stroke-width="2.5"/>
+      <path d="M 96 19 L 55 84 L 75 84 L 64 141 L 105 67 L 85 67 Z" fill="url(#navBolt)"/>
+    </svg>
+    Opti<em>Control</em>
+  </a>
   <ul class="nav-links">
     <li><a href="#prosess" data-i18n="nav.prosess">Slik fungerer det</a></li>
     <li><a href="#resultater" data-i18n="nav.resultater">Resultater</a></li>
@@ -2266,7 +2283,22 @@
 
     <!-- Col 1: Brand -->
     <div class="foot-col">
-      <a href="#" class="f-logo-big">Opti<em>Control</em></a>
+      <a href="#" class="f-logo-big">
+        <svg class="f-logo-icon" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="footBadgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0F2038"/><stop offset="100%" stop-color="#050E1C"/>
+            </linearGradient>
+            <linearGradient id="footBolt" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#00FF94"/>
+            </linearGradient>
+          </defs>
+          <rect x="8" y="8" width="144" height="144" rx="32" fill="url(#footBadgeBg)"/>
+          <rect x="8" y="8" width="144" height="144" rx="32" fill="none" stroke="rgba(0,229,255,0.35)" stroke-width="2.5"/>
+          <path d="M 96 19 L 55 84 L 75 84 L 64 141 L 105 67 L 85 67 Z" fill="url(#footBolt)"/>
+        </svg>
+        Opti<em>Control</em>
+      </a>
       <p class="foot-desc" data-i18n="footer.desc">Norsk leverandør av AI-drevne salgsløsninger. Vi hjelper B2B bedrifter øke pipeline og automatisere prosesser med kunstlig intelligens og menneskelig oppfølging.</p>
       <div class="foot-badges">
         <span class="foot-badge" data-i18n="footer.badge1">AI Salgseksperter</span>
