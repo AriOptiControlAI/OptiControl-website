@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" width="800" height="160">
+  <defs>
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2038"/>
+      <stop offset="100%" stop-color="#050E1C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#00FF94"/>
+    </linearGradient>
+    <linearGradient id="accentV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#00FF94"/>
+    </linearGradient>
+    <!-- Darker, text-safe version of the brand gradient — readable on white -->
+    <linearGradient id="accentText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0089A8"/>
+      <stop offset="100%" stop-color="#00A868"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Icon badge — tight padding so it fills a fixed-height header slot as much as possible ── -->
+  <g>
+    <rect x="8" y="8" width="144" height="144" rx="32" fill="url(#badgeBg)"/>
+    <rect x="8" y="8" width="144" height="144" rx="32" fill="none" stroke="rgba(0,229,255,0.35)" stroke-width="2.5"/>
+
+    <!-- bolt only — enlarged ~25% within the badge -->
+    <path d="M 96 19 L 55 84 L 75 84 L 64 141 L 105 67 L 85 67 Z" fill="url(#accentV)"/>
+  </g>
+
+  <!-- ── Wordmark (name only — no tagline, sized for small UI headers) ── -->
+  <text id="wordmark" x="182" y="109" font-family="system-ui, -apple-system, 'Segoe UI', Arial, sans-serif"
+        font-weight="800" font-size="86" letter-spacing="-2"><tspan id="wordmark-base" fill="#0A1628">Opti</tspan><tspan fill="url(#accentText)">Control</tspan></text>
+</svg>

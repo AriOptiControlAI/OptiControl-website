@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #020C18; --surf: #071629; --surf2: #0D2240;
+    --text: #E8F4FF; --muted: #5B8DB8; --cyan: #00E5FF; --green: #00FF94;
+    --border: rgba(0,229,255,0.14);
+    --grad: linear-gradient(135deg,#00E5FF 0%,#00FF94 100%);
+  }
+  html,body { width:1584px; height:396px; overflow:hidden; background:var(--bg); font-family:'Inter','Segoe UI',Arial,sans-serif; }
+
+  .banner { position:relative; width:1584px; height:396px; background:var(--bg); overflow:hidden; }
+
+  .grain { position:absolute; inset:0; opacity:.45; mix-blend-mode:overlay; pointer-events:none; }
+
+  .glow { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
+  .glow-1 { width:560px; height:560px; left:-140px; top:-200px; background:radial-gradient(circle, rgba(0,229,255,.16), transparent 70%); }
+  .glow-2 { width:520px; height:520px; right:-160px; bottom:-220px; background:radial-gradient(circle, rgba(0,255,148,.13), transparent 70%); }
+  .glow-3 { width:420px; height:420px; left:640px; top:-160px; background:radial-gradient(circle, rgba(0,229,255,.08), transparent 70%); }
+
+  /* photo + rings */
+  .photo-stage { position:absolute; left:0; top:0; width:520px; height:396px; z-index:2; }
+  .ring { position:absolute; border-radius:50%; border:1.5px solid rgba(0,229,255,.35); left:230px; top:50%; }
+  .ring1 { width:240px; height:240px; margin:-120px 0 0 -120px; opacity:.5; }
+  .ring2 { width:360px; height:360px; margin:-180px 0 0 -180px; opacity:.3; border-color:rgba(0,229,255,.25); }
+  .ring3 { width:480px; height:480px; margin:-240px 0 0 -240px; opacity:.15; border-color:rgba(0,255,148,.2); }
+  .photo-wrap {
+    position:absolute; left:40px; top:0; width:400px; height:396px; overflow:hidden;
+    -webkit-mask-image: radial-gradient(ellipse 58% 78% at 48% 46%, #000 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 58% 78% at 48% 46%, #000 55%, transparent 100%);
+  }
+  .photo-wrap img {
+    width:100%; height:100%; object-fit:cover; object-position:center 22%;
+    filter:grayscale(1) contrast(1.12) brightness(.92);
+  }
+
+  /* right content */
+  .content { position:absolute; left:552px; top:0; width:992px; height:396px; z-index:4; display:flex; flex-direction:column; justify-content:center; gap:22px; padding:0 48px 0 0; }
+
+  /* full logo lockup */
+  .logo-full { display:flex; align-items:center; gap:22px; }
+  .logo-badge { width:104px; height:104px; border-radius:24px; background:linear-gradient(135deg,#0F2038,#050E1C); border:1.3px solid rgba(0,229,255,.35); position:relative; flex-shrink:0; }
+  .logo-badge svg { position:absolute; inset:0; width:100%; height:100%; }
+  .logo-word { display:flex; flex-direction:column; gap:9px; }
+  .logo-word .name { font-size:52px; font-weight:800; letter-spacing:-.02em; color:#fff; line-height:1; }
+  .logo-tagline-row { display:flex; align-items:center; gap:11px; }
+  .as-chip { background:var(--grad); border-radius:7px; padding:4px 11px; font-size:16px; font-weight:800; letter-spacing:.03em; color:#04121B; }
+  .logo-tagline-row .tag { font-size:18px; font-weight:600; color:var(--muted); }
+
+  /* mini routing diagram */
+  .diagram { display:flex; align-items:center; gap:14px; }
+  .node-stack { display:flex; flex-direction:column; gap:8px; }
+  .node-chip { display:flex; align-items:center; gap:7px; background:var(--surf); border:1px solid var(--border); border-radius:8px; padding:6px 12px; }
+  .node-chip .dot { width:15px; height:15px; border-radius:50%; border:1.4px solid var(--cyan); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .node-chip .dot svg { width:8px; height:8px; stroke:var(--cyan); fill:none; stroke-width:2.4; }
+  .node-chip span.t { font-size:13px; font-weight:600; color:var(--text); white-space:nowrap; }
+
+  .dash-line { width:46px; height:0; border-top:1.5px dashed rgba(0,229,255,.4); position:relative; }
+  .dash-line svg { position:absolute; right:-3px; top:-6px; width:12px; height:12px; stroke:var(--cyan); fill:none; stroke-width:2.4; }
+
+  .route-circle {
+    width:64px; height:64px; border-radius:50%; background:var(--grad);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    box-shadow:0 0 28px rgba(0,229,255,.35);
+  }
+  .route-circle svg { width:26px; height:26px; stroke:#04121B; fill:none; stroke-width:2.6; }
+
+  /* CTA */
+  .cta-bar {
+    background:var(--surf); border:1px solid var(--border);
+    border-radius:999px; padding:16px 0; text-align:center; width:100%;
+    box-shadow:0 0 30px rgba(0,229,255,.05);
+  }
+  .cta-bar span { font-size:16px; font-weight:700; color:var(--text); letter-spacing:.01em; }
+  .cta-bar b { color:var(--cyan); font-weight:800; }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="grain" id="grain"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <div class="photo-stage">
+      <div class="ring ring3"></div>
+      <div class="ring ring2"></div>
+      <div class="ring ring1"></div>
+      <div class="photo-wrap">
+        <img src="ari-photo.jpeg"/>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="logo-full">
+        <div class="logo-badge">
+          <svg viewBox="0 0 104 104">
+            <defs>
+              <linearGradient id="lg1" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#00FF94"/>
+              </linearGradient>
+              <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#00FF94"/>
+              </linearGradient>
+            </defs>
+            <path d="M 14 76 Q 24 84 32 70 Q 41 51 58 46" fill="none" stroke="url(#lg2)" stroke-width="5" stroke-linecap="round" stroke-dasharray="1.5 15" opacity=".88"/>
+            <circle cx="14" cy="76" r="7.5" fill="url(#lg2)"/>
+            <circle cx="58" cy="46" r="7.5" fill="url(#lg2)"/>
+            <path d="M 56.5 14 L 33.5 59 L 50.5 59 L 43.5 91 L 75 45 L 56.5 45 Z" fill="url(#lg1)"/>
+          </svg>
+        </div>
+        <div class="logo-word">
+          <div class="name">OptiControl</div>
+          <div class="logo-tagline-row">
+            <div class="as-chip">AS</div>
+            <div class="tag">Signal-based B2B routing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagram">
+        <div class="node-stack">
+          <div class="node-chip"><span class="dot"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></span><span class="t">Buying signals</span></div>
+          <div class="node-chip"><span class="dot"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></span><span class="t">Qualified intent</span></div>
+        </div>
+        <div class="dash-line"><svg viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg></div>
+        <div class="route-circle"><svg viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg></div>
+        <div class="dash-line"><svg viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg></div>
+        <div class="node-stack">
+          <div class="node-chip"><span class="dot"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></span><span class="t">Warm introductions</span></div>
+          <div class="node-chip"><span class="dot"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></span><span class="t">Closed deals</span></div>
+        </div>
+      </div>
+
+      <div class="cta-bar"><span>DM ME <b>ROUTING</b> — I'll send you 5 signal-based prospects</span></div>
+    </div>
+  </div>
+
+<script>
+  const c = document.getElementById('grain');
+  const canvas = document.createElement('canvas');
+  canvas.width = 220; canvas.height = 55;
+  const ctx = canvas.getContext('2d');
+  const imgData = ctx.createImageData(220, 55);
+  for (let i = 0; i < imgData.data.length; i += 4) {
+    const v = Math.random() * 255;
+    imgData.data[i] = v; imgData.data[i+1] = v; imgData.data[i+2] = v; imgData.data[i+3] = 12;
+  }
+  ctx.putImageData(imgData, 0, 0);
+  c.style.backgroundImage = `url(${canvas.toDataURL()})`;
+</script>
+</body>
+</html>

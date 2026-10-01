@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <defs>
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2038"/>
+      <stop offset="100%" stop-color="#050E1C"/>
+    </linearGradient>
+    <linearGradient id="accentV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#00FF94"/>
+    </linearGradient>
+  </defs>
+  <!-- Badge at ~65% of canvas — midpoint between the 90%-fill (too big) and 45%-fill (too small) versions. -->
+  <rect x="38" y="38" width="144" height="144" rx="32" fill="url(#badgeBg)"/>
+  <rect x="38" y="38" width="144" height="144" rx="32" fill="none" stroke="rgba(0,229,255,0.35)" stroke-width="2.5"/>
+  <path d="M 126 49 L 85 114 L 105 114 L 94 171 L 135 97 L 115 97 Z" fill="url(#accentV)"/>
+</svg>

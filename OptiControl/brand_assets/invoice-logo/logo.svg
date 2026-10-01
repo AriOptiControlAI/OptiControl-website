@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 440" width="1120" height="440">
+  <defs>
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2038"/>
+      <stop offset="100%" stop-color="#050E1C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#00FF94"/>
+    </linearGradient>
+    <linearGradient id="accentV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#00FF94"/>
+    </linearGradient>
+    <!-- Darker, text-safe version of the brand gradient — bright icon gradient reads poorly as text on white -->
+    <linearGradient id="accentText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0089A8"/>
+      <stop offset="100%" stop-color="#00A868"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Icon badge ── -->
+  <g>
+    <rect x="40" y="40" width="360" height="360" rx="78" fill="url(#badgeBg)"/>
+    <rect x="40" y="40" width="360" height="360" rx="78" fill="none" stroke="rgba(0,229,255,0.35)" stroke-width="4"/>
+
+    <!-- signal / workflow path with nodes, arcing behind the bolt -->
+    <path d="M 118 296 Q 175 340 220 260 Q 270 170 340 150" fill="none" stroke="url(#accent)" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 22" opacity="0.85"/>
+    <circle cx="118" cy="296" r="12" fill="url(#accent)"/>
+    <circle cx="222" cy="258" r="9" fill="url(#accent)" opacity="0.9"/>
+    <circle cx="340" cy="150" r="12" fill="url(#accent)"/>
+
+    <!-- bolt -->
+    <path d="M 236 88 L 156 244 L 214 244 L 190 356 L 300 196 L 236 196 Z"
+          fill="url(#accentV)"/>
+  </g>
+
+  <!-- ── Wordmark ── -->
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Arial, sans-serif">
+    <text x="436" y="250" font-weight="800" font-size="92" letter-spacing="-2"><tspan id="wordmark-base" fill="#0A1628">Opti</tspan><tspan fill="url(#accentText)">Control</tspan></text>
+    <rect x="440" y="288" width="88" height="48" rx="11" fill="url(#accent)"/>
+    <text x="484" y="322" font-weight="800" font-size="30" letter-spacing="1" fill="#04121B" text-anchor="middle">AS</text>
+    <text x="542" y="321" font-weight="600" font-size="27" letter-spacing="0.3" fill="#5B6B82">Signalbasert B2B-kobling</text>
+  </g>
+</svg>
